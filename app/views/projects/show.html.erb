@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
+  <strong>Documents:</strong>
+  <%= link_to 'Novo documento', new_project_document_path(@project) %>
+  <ul>
+    <% @project.documents.each do |d| %>
+      <li><%= d.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

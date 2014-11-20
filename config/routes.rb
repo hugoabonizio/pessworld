@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects
+  
+
+  resources :projects do
+    resources :documents, shallow: true
+  end
 
   root 'welcome#index'
 
