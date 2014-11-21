@@ -10,12 +10,13 @@
 
   <div class="container">
     <div class="page-header">
-      <h1>Pessworld</h1>
+      <h1><%= link_to 'Pessworld', root_path %> <small>Save your passwords...</small></h1>
     </div>
     
     <%= render 'layouts/message' %>
-      
+    <div class="col-md-9 col-center">  
       <%= yield %>
+    </div>
   </div>
 
 </body>

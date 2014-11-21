@@ -16,3 +16,18 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.col-center {
+    float: none;
+    margin: 0 auto;
+}
+
+.page-header {
+  h1 a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+}

@@ -6,14 +6,13 @@
 </p>
 
 <p>
-  <strong>Documents:</strong>
-  <%= link_to 'Novo documento', new_project_document_path(@project) %>
-  <ul>
-    <% @project.documents.each do |d| %>
-      <li><%= d.name %></li>
-    <% end %>
-  </ul>
+  <%= link_to raw("#{bs_icon 'plus'} Novo"), new_project_document_path(@project), class: 'btn btn-primary' %>
+  <br><br>
+  
+  <% @project.documents.each do |d| %>
+  <button class="btn btn-default btn-lg">
+    <%= bs_icon 'folder-open' %><br>
+    <%= d.name %>
+  </button>
+  <% end %>
 </p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

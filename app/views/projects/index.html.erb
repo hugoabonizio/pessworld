@@ -1,6 +1,6 @@
-<h1>Listing projects</h1>
+<h3>Projetos</h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -10,15 +10,15 @@
 
   <tbody>
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to project.name, project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to bs_icon('remove'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= link_to project.name, project %></td>
+      <td><%= link_to bs_icon('edit'), edit_project_path(project) %></td>
+      <td><%= link_to bs_icon('remove'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'Novo projeto', new_project_path %>
