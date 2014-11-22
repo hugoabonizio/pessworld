@@ -3,21 +3,37 @@
 <head>
   <title>Pessworld</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
   <div class="container">
     <div class="page-header">
-      <h1><%= link_to 'Pessworld', root_path %> <small>Save your passwords...</small></h1>
+      <div class="row">
+        <div class="col-md-10">
+          <h1><%= link_to 'PESSWORLD', root_path %> <small>Save informations about your weekend projects...</small></h1>
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-default settings-btn" aria-label="Left Align">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          </a>
+          <div class="settings">
+            <ul class="nav nav-pills nav-stacked">
+              <li><%= link_to 'Account settings', destroy_user_session_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     
     <%= render 'layouts/message' %>
-    <div class="col-md-9 col-center">  
+    <div class="col-md-9 col-center content">  
       <%= yield %>
     </div>
   </div>
+  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

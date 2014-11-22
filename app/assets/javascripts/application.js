@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//$(document).ready(function(){
+  
+  $('.settings-btn').click(function(e){
+    e.preventDefault();
+    $('.settings').slideToggle('slow');
+  });
+
+//});

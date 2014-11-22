@@ -1,4 +1,4 @@
-<%= form_for(@project, html: { class: 'col-md-4 col-center' }) do |f| %>
+<%= form_for(@project, html: { class: 'col-md-6 col-center' }) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Nome' %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+  <div class="input-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Nome', size: 50 %>
+    <span class="input-group-btn">
+      <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    </span>
   </div>
 <% end %>

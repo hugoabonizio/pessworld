@@ -1,18 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <h3><%= @project.name %></h3>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="row">
+  <% if @project.documents.empty? %>
+    <div class="jumbotron text-center">
+      <%= bs_icon('folder-open') %><br>
+      <h4>No documents created yet</h4>
+      <h5>Click + to create a new document</h5>
+    </div>
+    
+  <% else %>
 
-<p>
-  <%= link_to raw("#{bs_icon 'plus'} Novo"), new_project_document_path(@project), class: 'btn btn-primary' %>
-  <br><br>
-  
-  <% @project.documents.each do |d| %>
-  <button class="btn btn-default btn-lg">
-    <%= bs_icon 'folder-open' %><br>
-    <%= d.name %>
-  </button>
+    <%= link_to raw("#{bs_icon 'plus'} Novo"), new_project_document_path(@project), class: 'btn btn-primary' %>
+    <br><br>
+
+    <div class="documents col-md-12">
+      <% @project.documents.each do |d| %>
+      <button class="btn btn-default btn-lg">
+        <%= bs_icon 'folder-open' %><br>
+        <%= d.name %>
+      </button>
+      <% end %>
+    </div>
   <% end %>
-</p>
+  
+  <div class="row">
+    <div class="col-md-11"></div>
+    <div class="col-md-1">
+      <%= link_to bs_icon('plus'), new_project_document_path(@project), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
