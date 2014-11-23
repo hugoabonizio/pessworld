@@ -14,10 +14,10 @@
 
     <div class="documents col-md-12">
       <% @project.documents.each do |d| %>
-      <button class="btn btn-default btn-lg">
+      <a href="<%= document_path(d) %>" class="btn btn-default btn-lg">
         <%= bs_icon 'folder-open' %><br>
         <%= d.name %>
-      </button>
+      </a>
       <% end %>
     </div>
   <% end %>
