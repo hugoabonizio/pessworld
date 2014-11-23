@@ -19,8 +19,8 @@
           </a>
           <div class="settings">
             <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to 'Account settings', destroy_user_session_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+              <li><%= link_to 'Account settings', edit_user_registration_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
         </div>
