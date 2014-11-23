@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.1'
-gem 'unicorn'
+gem 'unicorn', group: :production
+gem 'redcarpet'
 
 group :production do
   gem 'rails_12factor'

@@ -1,7 +1,7 @@
 <h3><%= @document.project.name %></h3>
 
 <p>
-  <%= raw @document.content.gsub! "\n", '<br>' %>
+  <%= markdown @document.content %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
