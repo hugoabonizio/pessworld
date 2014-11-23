@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <h3><%= @document.project.name %></h3>
 
 <p>
-  <%= @document.content %>
+  <%= raw @document.content.gsub! "\n", '<br>' %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', project_path(@document.project) %>
